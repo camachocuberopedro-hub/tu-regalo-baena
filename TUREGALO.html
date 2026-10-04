@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu Regalo · Papelería y regalos en Baena</title>
+<meta name="description" content="Tu Regalo, papelería y regalos en C. Nueva Carteya, 2, Baena (Córdoba). Horario y teléfono: 654 41 26 58.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#9E1B2C; --red-dark:#7C1322; --gold:#6B6230; --paper:#FBF9F6; --ink:#2B2322; --muted:#6C625F; --line:#E6DFD8;
+  --script:'Pacifico','Brush Script MT',cursive; --sans:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* Toldo */
+.awning{
+  background:repeating-linear-gradient(90deg,var(--red) 0 2.5rem,#fff 2.5rem 5rem);
+  height:3.2rem;position:relative;
+}
+.awning::after{
+  content:"";position:absolute;left:0;right:0;top:100%;height:1.1rem;
+  background:repeating-linear-gradient(90deg,var(--red) 0 2.5rem,#fff 2.5rem 5rem);
+  -webkit-mask:radial-gradient(circle at 1.25rem 0,#000 1.2rem,transparent 1.25rem) 0 0/2.5rem 100% repeat-x;
+          mask:radial-gradient(circle at 1.25rem 0,#000 1.2rem,transparent 1.25rem) 0 0/2.5rem 100% repeat-x;
+}
+header.hero{padding:1.5rem 0 3rem;text-align:center}
+.logo{font:400 clamp(3.4rem,13vw,7rem)/1.5 var(--script);color:var(--red);margin:.1em 0 1.1rem}
+.tagline{font-size:1.25rem;margin:1rem auto 0;max-width:30rem;color:var(--ink);position:relative}
+.place{color:var(--muted);margin:.25rem 0 0}
+.status{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.75rem;padding:.5rem 1rem;
+  border:1.5px solid var(--line);border-radius:999px;background:#fff;font-weight:600;
+}
+.dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--muted)}
+.status.open .dot{background:#1F8A4C}
+.status.closed .dot{background:var(--red)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+.btn{
+  display:inline-block;padding:.8rem 1.4rem;border-radius:.4rem;font-weight:600;text-decoration:none;
+  border:2px solid var(--red);transition:background .15s,color .15s;
+}
+.btn.primary{background:var(--red);color:#fff}
+.btn.primary:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.ghost{color:var(--red)}
+.btn.ghost:hover{background:var(--red);color:#fff}
+
+section{padding:3rem 0}
+h2{font:800 clamp(1.7rem,4vw,2.3rem)/1.15 var(--sans);margin:0 0 1rem;letter-spacing:-.01em}
+.about{background:var(--gold);color:#FBF9F6}
+.about p{max-width:38rem;font-size:1.2rem;margin:0}
+.about h2{color:#fff}
+
+.info{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.info{grid-template-columns:1fr}}
+dl{margin:0}
+dt{font-weight:800;margin-top:1.1rem}
+dt:first-child{margin-top:0}
+dd{margin:.15rem 0 0}
+dd a{color:var(--red);font-weight:600}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:.55rem 0;border-bottom:1px solid var(--line);font-weight:400}
+th{font-weight:600;padding-right:1rem}
+tr.today th,tr.today td{font-weight:800;color:var(--red)}
+.note{color:var(--muted);font-size:.95rem;margin-top:.75rem}
+
+footer{border-top:1px solid var(--line);padding:1.75rem 0 2.5rem;color:var(--muted);font-size:.95rem;text-align:center}
+footer b{font-family:var(--script);font-weight:400;color:var(--red);font-size:1.2rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="awning" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="logo">Tu Regalo</h1>
+    <p class="tagline">Papelería y regalos en el centro de Baena.</p>
+    <p class="place">C. Nueva Carteya, 2 · Córdoba</p>
+    <div class="status" id="status" role="status"><span class="dot"></span><span id="statusText">Comprobando horario…</span></div>
+    <div class="actions">
+      <a class="btn primary" href="tel:+34654412658">Llamar al 654 41 26 58</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Tu+Regalo+C.+Nueva+Carteya+2+Baena" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap">
+    <h2>Una tienda de las de siempre</h2>
+    <!-- EDITAR: sustituye este texto por la historia real de la tienda -->
+    <p>Material escolar y de oficina, libros, juguetes y detalles para cada ocasión. Entra, mira con calma y te ayudamos a encontrar lo que buscas.</p>
+  </div>
+</section>
+
+<section id="visita">
+  <div class="wrap info">
+    <div>
+      <h2>Visítanos</h2>
+      <dl>
+        <dt>Dirección</dt>
+        <dd>C. Nueva Carteya, 2, Local bajo<br>14850 Baena, Córdoba</dd>
+        <dt>Teléfono</dt>
+        <dd><a href="tel:+34654412658">654 41 26 58</a></dd>
+        <dt>Cómo llegar</dt>
+        <dd><a href="https://www.google.com/maps/search/?api=1&query=Tu+Regalo+C.+Nueva+Carteya+2+Baena" target="_blank" rel="noopener">Abrir en Google Maps</a></dd>
+      </dl>
+    </div>
+    <div>
+      <h2>Horario</h2>
+      <table id="horario">
+        <tr data-d="1"><th>Lunes</th><td>9:00–13:30 y 17:15–20:30</td></tr>
+        <tr data-d="2"><th>Martes</th><td>9:00–13:30 y 17:15–20:30</td></tr>
+        <tr data-d="3"><th>Miércoles</th><td>9:00–13:30 y 17:15–20:30</td></tr>
+        <tr data-d="4"><th>Jueves</th><td>9:00–13:30 y 17:15–20:30</td></tr>
+        <tr data-d="5"><th>Viernes</th><td>9:00–13:30 y 17:15–20:30</td></tr>
+        <tr data-d="6"><th>Sábado</th><td>10:00–13:30</td></tr>
+        <tr data-d="0"><th>Domingo</th><td>Cerrado</td></tr>
+      </table>
+      <p class="note">Los festivos pueden variar. Ante la duda, llámanos.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><b>Tu Regalo</b> · C. Nueva Carteya, 2, Baena · © <span id="year"></span></div>
+</footer>
+
+<script>
+(function(){
+  // Horario en minutos desde medianoche, por día (0 = domingo)
+  var m=function(h,mi){return h*60+mi};
+  var semana=[m(9,0),m(13,30),m(17,15),m(20,30)];
+  var H={0:[],1:[[semana[0],semana[1]],[semana[2],semana[3]]]};
+  for(var d=1;d<=5;d++)H[d]=[[m(9,0),m(13,30)],[m(17,15),m(20,30)]];
+  H[6]=[[m(10,0),m(13,30)]];
+  var fmt=function(x){return Math.floor(x/60)+':'+String(x%60).padStart(2,'0')};
+
+  // Hora actual en Madrid
+  var p=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var g=function(t){return p.find(function(x){return x.type===t}).value};
+  var dias={'lun':1,'mar':2,'mié':3,'jue':4,'vie':5,'sáb':6,'dom':0};
+  var dia=dias[g('weekday').replace('.','').toLowerCase()];
+  var ahora=parseInt(g('hour'),10)*60+parseInt(g('minute'),10);
+
+  var tr=document.querySelector('tr[data-d="'+dia+'"]');
+  if(tr)tr.classList.add('today');
+
+  var el=document.getElementById('status'),tx=document.getElementById('statusText');
+  var tramos=H[dia]||[],abierto=null,proximo=null;
+  tramos.forEach(function(t){
+    if(ahora>=t[0]&&ahora<t[1])abierto=t;
+    else if(ahora<t[0]&&!proximo)proximo=t;
+  });
+  if(abierto){el.className='status open';tx.textContent='Abierto ahora · cierra a las '+fmt(abierto[1]);}
+  else{
+    el.className='status closed';
+    tx.textContent=proximo?'Cerrado ahora · abre a las '+fmt(proximo[0]):'Cerrado ahora';
+  }
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
